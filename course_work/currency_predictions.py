@@ -1,6 +1,7 @@
 import requests
 import json
 from course_work.constants import JSON_RESULT_STRING
+from scipy.interpolate import UnivariateSpline
 
 
 def get_currency_information(days_number):
@@ -19,7 +20,7 @@ def get_currency_information(days_number):
     #print("\n\n\n\n\n", response.text, "\n\n\n\n\n", sep="")
 
     # return response.text
-    return "!"
+    return JSON_RESULT_STRING
 
 
 def parse_json_result_string(string=JSON_RESULT_STRING):
@@ -28,5 +29,21 @@ def parse_json_result_string(string=JSON_RESULT_STRING):
     result = dict()
     for key in currency_information['quotes'].keys():
         result[key] = currency_information['quotes'][key]['RUBDKK']
+
+    return result
+
+
+def predict_values(days_number):
+    data = get_currency_information(days_number)
+    currency_information = parse_json_result_string(data)
+
+    x = list([i + 1 for i in range(len(currency_information))])
+    y = list(currency_information.values())
+    spl = UnivariateSpline(x, y)
+
+    result = []
+    for i in range(days_number):
+        new_value = float(spl(i + len(currency_information)))
+        result.append(new_value)
 
     return result
