@@ -17,5 +17,5 @@ from django.urls import path
 from course_work.views import give_currency_prediction
 
 urlpatterns = [
-    path('<int:a>', give_currency_prediction)
+    path('<int:days_number>', give_currency_prediction)
 ]

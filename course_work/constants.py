@@ -1,3 +1,4 @@
+API_KEY = 'ihujB93OoO8qFGK9mLXr1mdnNP8OxDtE'
 JSON_RESULT_STRING="""{
     "success": true,
     "timeframe": true,
