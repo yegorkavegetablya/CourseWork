@@ -5,13 +5,19 @@ from scipy.interpolate import UnivariateSpline
 import datetime
 import seaborn
 import matplotlib.pyplot as plt
+import time
 
 
-def get_currency_information(days_number):
+def get_currency_information():
+    now = datetime.datetime.now()
+    now_str = now.strftime("%Y-%m-%d")
+    then = now - datetime.timedelta(days=90)
+    then_str = then.strftime("%Y-%m-%d")
+
     query = "https://api.apilayer.com/currency_data/timeframe?"
-    query += "start_date=2022-01-01"
+    query += ("start_date=" + then_str)
     query += "&"
-    query += "end_date=2022-03-01"
+    query += ("end_date=" + now_str)
     query += "&"
     query += "currencies=DKK"
     query += "&"
@@ -19,11 +25,11 @@ def get_currency_information(days_number):
     query += "&"
     query += f"apikey={API_KEY}"
 
-    response = requests.get(query)
-    print("\n\n\n\n\n", response.text, "\n\n\n\n\n", sep="")
-
-    return response.text
-    # return JSON_RESULT_STRING
+    # response = requests.get(query)
+    # print("\n\n\n\n\n", response.text, "\n\n\n\n\n", sep="")
+    #
+    # return response.text
+    return JSON_RESULT_STRING
 
 
 def parse_json_result_string(string=JSON_RESULT_STRING):
@@ -37,7 +43,7 @@ def parse_json_result_string(string=JSON_RESULT_STRING):
 
 
 def predict_values(days_number):
-    data = get_currency_information(days_number)
+    data = get_currency_information()
     currency_information = parse_json_result_string(data)
 
     x = list([i + 1 for i in range(len(currency_information))])
@@ -59,10 +65,22 @@ def create_prediction_plot(days_number):
     now = datetime.datetime.now()
     for i in range(days_number):
         now = now + datetime.timedelta(days=1)
-        dates.append(str(now.year) + "/" + str(now.month) + "/" + str(now.day))
+        dates.append(now.strftime("%y/%m/%d"))
 
-    seaborn.lineplot(x=dates, y=data, markers=True)
+    seaborn.lineplot(x=dates, y=data)
     plt.xticks(rotation=70)
-    plt.show()
 
-    return data
+    return save_plot()
+
+
+def save_plot():
+    current_index = -1
+    with open(".\\media\\index.txt", 'r') as fi:
+        current_index = int(fi.read())
+    with open(".\\media\\index.txt", 'w') as fo:
+        fo.write(str(current_index + 1))
+
+    file_name = "plot_" + str(current_index) + ".png"
+    plt.savefig(".\\media\\" + file_name)
+
+    return file_name

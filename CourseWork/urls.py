@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.urls import path
 from course_work.views import give_currency_prediction
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('<int:days_number>', give_currency_prediction)
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
