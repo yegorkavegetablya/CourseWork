@@ -11,7 +11,7 @@ import time
 def get_currency_information():
     now = datetime.datetime.now()
     now_str = now.strftime("%Y-%m-%d")
-    then = now - datetime.timedelta(days=90)
+    then = now - datetime.timedelta(days=360)
     then_str = then.strftime("%Y-%m-%d")
 
     query = "https://api.apilayer.com/currency_data/timeframe?"
@@ -42,7 +42,7 @@ def parse_json_result_string(string=JSON_RESULT_STRING):
     return result
 
 
-def predict_values(days_number):
+def predict_values(start_date_result, end_date_result):
     data = get_currency_information()
     currency_information = parse_json_result_string(data)
 
@@ -51,21 +51,22 @@ def predict_values(days_number):
     spl = UnivariateSpline(x, y)
 
     result = []
-    for i in range(days_number):
-        new_value = float(spl(i + len(currency_information)))
+    difference = (start_date_result - datetime.datetime.now()).days
+    for i in range((end_date_result - start_date_result).days + 1):
+        new_value = float(spl(i + difference + len(currency_information)))
         result.append(new_value)
 
     return result
 
 
-def create_prediction_plot(days_number):
-    data = predict_values(days_number)
+def create_prediction_plot(start_date_result, end_date_result):
+    data = predict_values(start_date_result, end_date_result)
     dates = []
 
-    now = datetime.datetime.now()
-    for i in range(days_number):
-        now = now + datetime.timedelta(days=1)
-        dates.append(now.strftime("%y/%m/%d"))
+    start_date = start_date_result
+    for i in range((end_date_result - start_date_result).days + 1):
+        dates.append(start_date.strftime("%y/%m/%d"))
+        start_date = start_date + datetime.timedelta(days=1)
 
     seaborn.lineplot(x=dates, y=data)
     plt.xticks(rotation=70)
