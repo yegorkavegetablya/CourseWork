@@ -17,9 +17,11 @@ from django.urls import path
 from course_work.views import give_currency_prediction
 from django.conf import settings
 from django.conf.urls.static import static
+from course_work_api.views import CurrencyPredictionView
 
 urlpatterns = [
-    path('predict_currency', give_currency_prediction)
+    path('predict_currency', give_currency_prediction),
+    path('api', CurrencyPredictionView.as_view())
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
