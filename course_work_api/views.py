@@ -5,6 +5,7 @@ from .models import CurrencyPrediction
 from .serializers import CurrencyPredictionSerializer
 from course_work.currency_predictions import create_prediction_plot
 import datetime
+import json
 
 
 # Create your views here.
@@ -15,9 +16,16 @@ class CurrencyPredictionView(APIView):
 
         start_date = request.GET.get('start_date')
         end_date = request.GET.get('end_date')
+        api_key = request.GET.get('api_key')
 
         start_date_result = check_date(start_date)
         end_date_result = check_date(end_date)
+
+        with open(".\\media\\users.json", 'r') as f:
+            users = json.load(f)
+        if api_key not in users.values():
+            status = 'error'
+            result_message = "Ошибка, неверный API-ключ!"
 
         if isinstance(start_date_result, str):
             status = "error"
