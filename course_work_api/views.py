@@ -23,26 +23,23 @@ class CurrencyPredictionView(APIView):
 
         with open(".\\media\\users.json", 'r') as f:
             users = json.load(f)
+
         if api_key not in users.values():
             status = 'error'
             result_message = "Ошибка, неверный API-ключ!"
-
-        if isinstance(start_date_result, str):
+        elif isinstance(start_date_result, str):
             status = "error"
             result_message = "Ошибка с первой датой: " + start_date_result
-        if isinstance(end_date_result, str):
+        elif isinstance(end_date_result, str):
             status = "error"
             result_message = "Ошибка со второй датой: " + end_date_result
-
-        if start_date_result > end_date_result:
+        elif start_date_result > end_date_result:
             status = "error"
             result_message = "Ошибка, начальная дата не может быть позже конечной!"
-
-        if datetime.datetime.now() + datetime.timedelta(days=200) < end_date_result:
+        elif datetime.datetime.now() + datetime.timedelta(days=200) < end_date_result:
             status = "error"
             result_message = "Ошибка, дата выходит за пределы допустимого интервала предсказания, доступны следующие 200 дней!"
-
-        if status == "ok":
+        else:
             result_message = create_prediction_plot(start_date_result, end_date_result)
 
         currency_prediction = CurrencyPrediction(status, result_message)
