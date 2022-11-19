@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: Currency prediction API
+  version: 1.0.0
+  description: API that predicts currency
+paths:
+  /api:
+    get:
+      operationId: api_retrieve
+      parameters:
+        - name: start_date
+          in: query
+          required: true
+          description: date by which the prediction interval starts
+          schema:
+            type: date
+        - name: end_date
+            in: query
+            required: true
+            description: date by which the prediction interval ends
+            schema:
+              type: date
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: the programm successfully maintained the request
+          content:
+            application/json:
+              schema:
+                type: string
+                properties:
+                  uuid:
+                    type: string
+                    format: uuid
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

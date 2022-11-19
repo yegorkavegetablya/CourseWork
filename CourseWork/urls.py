@@ -18,10 +18,19 @@ from course_work.views import give_currency_prediction
 from django.conf import settings
 from django.conf.urls.static import static
 from course_work_api.views import CurrencyPredictionView
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns = [
     path('predict_currency', give_currency_prediction),
-    path('api', CurrencyPredictionView.as_view())
+    path('api', CurrencyPredictionView.as_view()),
+    path("schema/", SpectacularAPIView.as_view(), name="schema"),
+    path(
+        "docs/",
+        SpectacularSwaggerView.as_view(
+            url_name="schema"
+        ),
+        name="swagger-ui"
+    )
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

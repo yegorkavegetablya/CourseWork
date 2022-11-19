@@ -6,10 +6,39 @@ from .serializers import CurrencyPredictionSerializer
 from course_work.currency_predictions import create_prediction_plot
 import datetime
 import json
+from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
+from drf_spectacular.types import OpenApiTypes
 
 
 # Create your views here.
 class CurrencyPredictionView(APIView):
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                name="start_date",
+                description="date by which the prediction interval starts",
+                required=True,
+                type=OpenApiTypes.DATE
+            ),
+            OpenApiParameter(
+                name="end_date",
+                description="date by which the prediction interval ends",
+                required=True,
+                type=OpenApiTypes.DATE
+            ),
+            OpenApiParameter(
+                name="api_key",
+                description="API key for authentication",
+                required=True,
+                type=OpenApiTypes.STR
+            )
+        ],
+        description="Currency prediction for certain interval",
+        responses={
+            200: CurrencyPredictionSerializer
+        },
+        methods=["GET"]
+    )
     def get(self, request):
         status = "ok"
         result_message = ""
@@ -20,6 +49,8 @@ class CurrencyPredictionView(APIView):
 
         start_date_result = check_date(start_date)
         end_date_result = check_date(end_date)
+
+
 
         with open(".\\media\\users.json", 'r') as f:
             users = json.load(f)
