@@ -5,7 +5,8 @@ from scipy.interpolate import UnivariateSpline
 import datetime
 import seaborn
 import matplotlib.pyplot as plt
-import time
+from matplotlib import rcParams
+import pandas as p
 
 
 def get_currency_information():
@@ -68,8 +69,20 @@ def create_prediction_plot(start_date_result, end_date_result):
         dates.append(start_date.strftime("%y/%m/%d"))
         start_date = start_date + datetime.timedelta(days=1)
 
-    seaborn.lineplot(x=dates, y=data)
-    plt.xticks(rotation=70)
+    dataFrame = p.DataFrame([[dates[i], data[i], 0] for i in range(len(dates))],
+                    columns=["Дата", "Значение по отношению к рублю", "Кривая курса валют"])
+
+    seaborn.set_theme(style="darkgrid")
+    rcParams['figure.figsize'] = 20, 10
+    plt.fill_between(dates, data, min(data), facecolor="red", color="yellow", alpha=0.5)
+    for i in range(len(dates)):
+        min_y = 0.05
+        max_y = 0.05 + ((data[i] - min(data)) / (max(data) - min(data))) / 100 * 90
+        plt.axvline(dates[i], min_y, max_y, color="orange", linestyle="dashed")
+    seaborn.lineplot(dataFrame, x="Дата", y="Значение по отношению к рублю", color="red",
+                     dashes=True, markers=True, style="Кривая курса валют")
+    plt.xticks(rotation=40)
+    plt.title(f"Предсказание курса валют датской кроны с {start_date_result.strftime('%d-%m-%Y')} по {end_date_result.strftime('%d-%m-%Y')}")
 
     return save_plot()
 
