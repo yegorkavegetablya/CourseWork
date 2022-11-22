@@ -21,8 +21,8 @@ from course_work_api.views import CurrencyPredictionView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns = [
-    path('predict_currency', give_currency_prediction),
-    path('api', CurrencyPredictionView.as_view()),
+    path('predict_currency', give_currency_prediction, name="predict_currency"),
+    path('api', CurrencyPredictionView.as_view(), name="predict_currency_api"),
     path("schema/", SpectacularAPIView.as_view(), name="schema"),
     path(
         "docs/",

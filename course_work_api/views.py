@@ -6,7 +6,7 @@ from .serializers import CurrencyPredictionSerializer
 from course_work.currency_predictions import create_prediction_plot
 import datetime
 import json
-from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
+from drf_spectacular.utils import extend_schema, OpenApiParameter
 from drf_spectacular.types import OpenApiTypes
 
 
