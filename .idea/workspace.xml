@@ -2,75 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47a695d4-f873-4be5-8a98-734164a87166" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CourseWork.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CourseWork.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseWork/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseWork/asgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseWork/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseWork/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseWork/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backup.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work/constants.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work/currency_predictions.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work_api/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work_api/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work_api/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work_api/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work_api/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work_api/serializers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work_api/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/course_work_api/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/index.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/plot_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/users.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/plot_show.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/CourseWork/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/CourseWork/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/course_work/currency_predictions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/course_work/currency_predictions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/course_work_api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/course_work_api/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/course_work_api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/course_work_api/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/course_work_api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/course_work_api/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +25,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IftLTVtAyz6HXWXBrLgTxoc9xY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -98,7 +37,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Application/venv" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -111,7 +50,7 @@
       <workItem from="1670584413867" duration="726000" />
       <workItem from="1670585151332" duration="2000" />
       <workItem from="1670585167119" duration="355000" />
-      <workItem from="1670585533695" duration="1311000" />
+      <workItem from="1670585533695" duration="2548000" />
     </task>
     <servers />
   </component>
@@ -120,5 +59,10 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Application" />
+    </ignored-roots>
   </component>
 </project>

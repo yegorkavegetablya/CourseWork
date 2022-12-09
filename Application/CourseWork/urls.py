@@ -17,7 +17,7 @@ from django.urls import path
 from course_work.views import give_currency_prediction
 from django.conf import settings
 from django.conf.urls.static import static
-from course_work_api.views import CurrencyPredictionView
+from course_work_api.views import CurrencyPredictionView, ImageFromPillowView
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns = [
@@ -30,7 +30,8 @@ urlpatterns = [
             url_name="schema"
         ),
         name="swagger-ui"
-    )
-]
+    ),
+    path('image/<str:name>', ImageFromPillowView.as_view(), name="image")
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

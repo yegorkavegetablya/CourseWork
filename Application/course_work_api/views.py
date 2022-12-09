@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import CurrencyPrediction
-from .serializers import CurrencyPredictionSerializer
-from course_work.currency_predictions import create_prediction_plot
+from .models import CurrencyPrediction, ImageFromPillow
+from .serializers import CurrencyPredictionSerializer, ImageFromPillowSerializer
+from course_work.currency_predictions import create_prediction_plot, encode_image
 import datetime
 import json
 from drf_spectacular.utils import extend_schema, OpenApiParameter
@@ -93,3 +93,12 @@ def check_date(str_date):
         return "Дата уже наступила!"
 
     return date_date
+
+
+class ImageFromPillowView(APIView):
+    def get(self, request, name):
+        image_string = encode_image(f'./media/' + name)
+        image_result = ImageFromPillow(image_string, 'utf-8')
+        serializer_for_request = ImageFromPillowSerializer(instance=image_result)
+
+        return Response(serializer_for_request.data)

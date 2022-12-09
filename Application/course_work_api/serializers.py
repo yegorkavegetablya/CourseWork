@@ -27,3 +27,8 @@ from drf_spectacular.utils import OpenApiExample, extend_schema_serializer
 class CurrencyPredictionSerializer(serializers.Serializer):
     status = serializers.CharField()
     result_message = serializers.CharField()
+
+
+class ImageFromPillowSerializer(serializers.Serializer):
+    image_base64 = serializers.CharField()
+    encoding = serializers.CharField()
