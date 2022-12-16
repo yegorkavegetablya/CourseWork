@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47a695d4-f873-4be5-8a98-734164a87166" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Http-client/src/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/CourseWork/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/CourseWork/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/CourseWork/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/CourseWork/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/course_work/currency_predictions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/course_work/currency_predictions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/course_work_api/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/course_work_api/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/course_work_api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/course_work_api/serializers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/course_work_api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Application/course_work_api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Application/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +51,10 @@
       <workItem from="1670584413867" duration="726000" />
       <workItem from="1670585151332" duration="2000" />
       <workItem from="1670585167119" duration="355000" />
-      <workItem from="1670585533695" duration="2548000" />
+      <workItem from="1670585533695" duration="3410000" />
+      <workItem from="1670962951319" duration="1436000" />
+      <workItem from="1670964609882" duration="772000" />
+      <workItem from="1671201566456" duration="10642000" />
     </task>
     <servers />
   </component>
@@ -58,6 +62,8 @@
     <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
     <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
   </component>
   <component name="VcsManagerConfiguration">

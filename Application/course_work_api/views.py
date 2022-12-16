@@ -52,7 +52,7 @@ class CurrencyPredictionView(APIView):
 
 
 
-        with open(f"./media/users.json", 'r') as f:
+        with open(f"./static/users.json", 'r') as f:
             users = json.load(f)
 
         if api_key not in users.values():
@@ -97,7 +97,7 @@ def check_date(str_date):
 
 class ImageFromPillowView(APIView):
     def get(self, request, name):
-        image_string = encode_image(f'./media/' + name)
+        image_string = encode_image(f'./static/' + name)
         image_result = ImageFromPillow(image_string, 'utf-8')
         serializer_for_request = ImageFromPillowSerializer(instance=image_result)
 

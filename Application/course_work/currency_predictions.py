@@ -91,13 +91,13 @@ def create_prediction_plot(start_date_result, end_date_result):
 
 def save_plot():
     current_index = -1
-    with open(f"./media/index.txt", 'r') as fi:
+    with open(f"./static/index.txt", 'r') as fi:
         current_index = int(fi.read())
-    with open(f"./media/index.txt", 'w') as fo:
+    with open(f"./static/index.txt", 'w') as fo:
         fo.write(str(current_index + 1))
 
     file_name = "plot_" + str(current_index) + ".png"
-    plt.savefig(f"./media/" + file_name)
+    plt.savefig(f"./static/" + file_name)
 
     return file_name
 

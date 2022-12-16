@@ -1,8 +1,42 @@
-version: "3.8"
+version: "3"
 services:
-  app:
-    build: ./Application
-    container_name: django_app
+  app_server:
+    build:
+      context: .
+      dockerfile: ./Application/Dockerfile
+    container_name: ${APP_CONTAINER_NAME}
+    environment:
+      - .env
+    entrypoint: ['uwsgi', 'app_uwsgi.ini']
     restart: always
+    #ports:
+    #- "8000:8000"
+    volumes:
+      - static_files:${STATIC_ROOT}
+  nginx_server:
+    build:
+      context: .
+      dockerfile: ./Nginx/Dockerfile
+    container_name: ${NGINX_SERVER_CONTAINER_NAME}
+    environment:
+      - .env
+    #ports:
+    #- "80:80"
+    volumes:
+      - static_files:${STATIC_PATH_NGINX}
+    depends_on:
+      - app_server
+  http_client:
+    build:
+      context: .
+      dockerfile: ./Http-client/Dockerfile
+    container_name: ${CLIENT_CONTAINER_NAME}
+    environment:
+      - .env
     ports:
-      - "80:8000"
+      - "80:80"
+    depends_on:
+      - app_server
+      - nginx_server
+volumes:
+  static_files:
