@@ -50,8 +50,6 @@ class CurrencyPredictionView(APIView):
         start_date_result = check_date(start_date)
         end_date_result = check_date(end_date)
 
-
-
         with open(f"./static/users.json", 'r') as f:
             users = json.load(f)
 

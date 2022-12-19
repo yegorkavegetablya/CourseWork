@@ -45,3 +45,7 @@ def check_date(str_date):
         return "Дата уже наступила!"
 
     return date_date
+
+
+def testing_view(request):
+    return HttpResponse("Тестовый ответ")

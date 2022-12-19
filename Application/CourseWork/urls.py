@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-from course_work.views import give_currency_prediction
+from course_work.views import give_currency_prediction, testing_view
 from django.conf import settings
 from django.conf.urls.static import static
 from course_work_api.views import CurrencyPredictionView, ImageFromPillowView
@@ -31,7 +31,8 @@ urlpatterns = [
         ),
         name="swagger-ui"
     ),
-    path('image/<str:name>', ImageFromPillowView.as_view(), name="image")
+    path('image/<str:name>', ImageFromPillowView.as_view(), name="image"),
+    path('testing', testing_view, name="testing")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,5 +1,4 @@
 import base64
-
 import requests
 import json
 from course_work.constants import API_KEY, JSON_RESULT_STRING
@@ -28,11 +27,9 @@ def get_currency_information():
     query += "&"
     query += f"apikey={API_KEY}"
 
-    # response = requests.get(query)
-    # print("\n\n\n\n\n", response.text, "\n\n\n\n\n", sep="")
-    #
-    # return response.text
-    return JSON_RESULT_STRING
+    response = requests.get(query)
+
+    return response.text
 
 
 def parse_json_result_string(string=JSON_RESULT_STRING):
@@ -108,4 +105,4 @@ def encode_image(image_path):
         base64_encoded_data = base64.b64encode(binary_file_data)
         base64_message = base64_encoded_data.decode('utf-8')
 
-        return  base64_message
+        return base64_message

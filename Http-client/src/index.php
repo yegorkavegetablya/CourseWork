@@ -19,7 +19,7 @@
 
                 $response_array = json_decode($response, true);
                 $status = $response_array['status'];
-                $message = $response_array['message'];
+                $message = $response_array['result_message'];
 
                 echo "Статус запроса: ".$status.", сообщение: ".$message;
             }
@@ -46,13 +46,12 @@
 
                 $myCurl = curl_init();
                 curl_setopt_array($myCurl, array(
-                    CURLOPT_URL => "http://nginxserver/api/image/".$_POST['image_name'],
+                    CURLOPT_URL => "http://nginxserver/image/".$_POST['image_name'],
                     CURLOPT_RETURNTRANSFER => true,
                     CURLOPT_HEADER => false,
                 ));
                 $response = curl_exec($myCurl);
                 curl_close($myCurl);
-                echo $response;
 
                 $response_array = json_decode($response, true);
                 $base64_code = $response_array['image_base64'];

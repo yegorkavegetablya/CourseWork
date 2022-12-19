@@ -1,4 +1,4 @@
-version: "3"
+version: "3.8"
 services:
   app_server:
     build:
@@ -9,8 +9,6 @@ services:
       - .env
     entrypoint: ['uwsgi', 'app_uwsgi.ini']
     restart: always
-    #ports:
-    #- "8000:8000"
     volumes:
       - static_files:${STATIC_ROOT}
   nginx_server:
@@ -20,8 +18,6 @@ services:
     container_name: ${NGINX_SERVER_CONTAINER_NAME}
     environment:
       - .env
-    #ports:
-    #- "80:80"
     volumes:
       - static_files:${STATIC_PATH_NGINX}
     depends_on:
